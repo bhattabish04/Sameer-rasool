@@ -17,14 +17,15 @@ body {
     scroll-behavior: smooth;
 }
 
-/* DISCOUNT BAR */
+/* BIG DISCOUNT BAR */
 .discount-bar {
     background:#facc15;
     color:#0f172a;
     text-align:center;
     font-weight:bold;
-    padding:8px 0;
-    font-size:18px;
+    padding:15px 0;
+    font-size:26px;
+    letter-spacing:1px;
     animation: pulse 2s infinite;
 }
 @keyframes pulse {
@@ -44,7 +45,6 @@ nav {
     z-index: 1000;
     backdrop-filter: blur(8px);
     background: rgba(0,0,0,0.5);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 nav h1 {
     color: #38bdf8;
@@ -72,29 +72,14 @@ nav .hamburger div { width:25px; height:3px; background:white; margin:4px 0; tra
     text-align: center;
     background: linear-gradient(135deg, #0f172a, #1e293b);
 }
-.hero::after {
-    content:'';
-    position:absolute; top:0; left:0; width:100%; height:100%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.02) 1px,
-        transparent 1px,
-        transparent 20px
-    );
-    z-index:1;
-}
 .hero-content { position: relative; z-index: 2; animation: fadeIn 2s ease forwards; }
 .hero-content h2 { font-size:50px; margin:0; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
 .hero-content p { font-size:22px; margin-top:10px; text-shadow:1px 1px 6px rgba(0,0,0,0.7); }
 .btn { margin-top:20px; padding:14px 30px; background:linear-gradient(45deg,#38bdf8,#0ea5e9); color:white; text-decoration:none; border-radius:8px; font-weight:600; transition:0.3s; }
 .btn:hover { transform: scale(1.05); box-shadow:0 0 15px #38bdf8; }
-.offer-line { font-size:20px; margin-top:15px; color:#facc15; font-weight:bold; overflow:hidden; white-space:nowrap; border-right:3px solid #facc15; width:0; animation: typing 5s steps(50,end) forwards, blink 0.7s step-end infinite; }
-@keyframes typing { from{width:0;} to{width:100%;} }
-@keyframes blink { 50%{border-color:transparent;} }
 
 /* PRODUCTS */
-.products, .featured-slider { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; padding:60px 20px; }
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; padding:60px 20px; }
 .card { background:#1e293b; border-radius:15px; overflow:hidden; position:relative; text-align:center; transition: transform 0.5s, box-shadow 0.5s, opacity 1s; box-shadow:0 5px 20px rgba(0,0,0,0.3); opacity:0; transform:translateY(30px); }
 .card.visible { opacity:1; transform:translateY(0); }
 .card:hover { transform:translateY(-15px); box-shadow:0 15px 40px rgba(0,0,0,0.6); }
@@ -109,20 +94,6 @@ nav .hamburger div { width:25px; height:3px; background:white; margin:4px 0; tra
 .card .price { margin-bottom:10px; color:#38bdf8; font-weight:bold; font-size:18px; }
 .cod { background:#f43f5e; color:white; font-weight:bold; padding:5px 10px; border-radius:5px; display:inline-block; margin-bottom:10px; }
 
-/* FEATURED CAROUSEL */
-.featured-slider { display:flex; overflow-x:auto; gap:20px; scroll-behavior:smooth; padding-bottom:10px; }
-.featured-slider::-webkit-scrollbar { display:none; }
-
-/* TESTIMONIALS */
-#testimonials h2 { text-align:center; margin-bottom:40px; }
-.testimonial-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.testimonial-card { background:#0f172a; border-radius:15px; padding:20px; text-align:center; opacity:0; transform:translateY(30px); transition: all 1s; }
-.testimonial-card.visible { opacity:1; transform:translateY(0); }
-
-/* CONTACT */
-#contact h2 { font-size:36px; margin-bottom:20px; }
-#contact p { font-size:18px; margin:8px 0; }
-
 /* FOOTER */
 footer { background:#000; padding:30px 20px; text-align:center; font-size:16px; }
 footer a { color:#38bdf8; margin:0 10px; text-decoration:none; transition:0.3s; }
@@ -133,7 +104,7 @@ footer a:hover { color:#0ea5e9; }
     nav .nav-links { display:none; flex-direction:column; background:rgba(0,0,0,0.9); position:absolute; top:60px; right:0; width:200px; border-radius:0 0 0 8px; }
     nav .nav-links.show { display:flex; }
     nav .hamburger { display:flex; }
-    .products, .featured-slider { grid-template-columns:1fr; }
+    .products { grid-template-columns:1fr; }
 }
 
 /* Animations */
@@ -142,7 +113,7 @@ footer a:hover { color:#0ea5e9; }
 </head>
 <body>
 
-<!-- DISCOUNT BAR -->
+<!-- BIG DISCOUNT BAR -->
 <div class="discount-bar">🎉 10% OFF for the first 100 customers! 🎉</div>
 
 <!-- NAVBAR -->
@@ -154,8 +125,6 @@ footer a:hover { color:#0ea5e9; }
     <div class="nav-links">
         <a href="#">Home</a>
         <a href="#products">Shop</a>
-        <a href="#featured">Featured</a>
-        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
     </div>
     <div class="hamburger" onclick="toggleMenu()">
@@ -168,7 +137,6 @@ footer a:hover { color:#0ea5e9; }
     <div class="hero-content">
         <h2>🔥 All Items ₹499 🔥</h2>
         <p>Premium Clothing Brand</p>
-        <div class="offer-line">10% off for first 100 customers!</div>
         <a href="#products" class="btn">Shop Now</a>
     </div>
 </section>
@@ -202,46 +170,6 @@ footer a:hover { color:#0ea5e9; }
         <h3>Shirt</h3>
         <p class="price">₹499</p>
     </div>
-    <div class="card">
-        <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1602810318354-4b2e2c41d69f"> <!-- Jacket -->
-            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
-        </div>
-        <span class="cod">COD Available</span>
-        <h3>Jacket</h3>
-        <p class="price">₹699</p>
-    </div>
-    <div class="card">
-        <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1618354699278-94b2c8f7b57b"> <!-- Sweater -->
-            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
-        </div>
-        <span class="cod">COD Available</span>
-        <h3>Sweater</h3>
-        <p class="price">₹599</p>
-    </div>
-</section>
-
-<!-- FEATURED PRODUCTS (CAROUSEL) -->
-<section id="featured">
-    <h2 style="text-align:center; margin-bottom:40px;">🌟 Featured Products</h2>
-    <div class="featured-slider" id="carousel">
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>T-Shirt</h3><p class="price">₹499</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Hoodie</h3><p class="price">₹499</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Shirt</h3><p class="price">₹499</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1602810318354-4b2e2c41d69f"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Jacket</h3><p class="price">₹699</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-94b2c8f7b57b"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Sweater</h3><p class="price">₹599</p></div>
-    </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" style="padding:60px 20px; background:#1e293b;">
-    <h2>💬 What Our Customers Say</h2>
-    <div class="testimonial-grid">
-        <div class="testimonial-card"><p>"Absolutely love the quality and fit!"</p><h4 style="margin-top:10px; color:#38bdf8;">- Ahmad Kharu</h4></div>
-        <div class="testimonial-card"><p>"Fast delivery and amazing service!"</p><h4 style="margin-top:10px; color:#38bdf8;">- Amina</h4></div>
-        <div class="testimonial-card"><p>"Premium quality clothes at affordable price!"</p><h4 style="margin-top:10px; color:#38bdf8;">- Sameer</h4></div>
-    </div>
 </section>
 
 <!-- CONTACT -->
@@ -254,7 +182,6 @@ footer a:hover { color:#0ea5e9; }
 <!-- FOOTER -->
 <footer>
     <p>© 2026 Sameer Rasool</p>
-    <p><a href="#">Instagram</a> | <a href="#">WhatsApp</a></p>
 </footer>
 
 <script>
@@ -263,7 +190,7 @@ function toggleMenu(){document.querySelector('.nav-links').classList.toggle('sho
 
 // Scroll reveal animations
 function reveal() {
-    let cards = document.querySelectorAll('.card, .testimonial-card');
+    let cards = document.querySelectorAll('.card');
     for(let card of cards){
         let windowHeight = window.innerHeight;
         let elementTop = card.getBoundingClientRect().top;
@@ -274,10 +201,7 @@ function reveal() {
 }
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
-
-// Featured carousel auto-scroll
-let carousel = document.getElementById('carousel');
-setInterval(()=>{carousel.scrollBy({left:300, behavior:'smooth'});},3000);
 </script>
+
 </body>
 </html>
