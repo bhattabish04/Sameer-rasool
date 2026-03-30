@@ -10,44 +10,48 @@ body {
     margin: 0;
     font-family: Arial;
     color: white;
-    background: url('bg.jpg') no-repeat center center/cover;
+    background: #0f172a;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    top: 0;
-    left: 0;
-    z-index: -1;
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: black;
 }
 
-header {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-header h1 {
-    font-size: 45px;
+nav h1 {
     color: #38bdf8;
 }
 
-.btn {
-    padding: 12px 25px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 5px;
+nav a {
+    color: white;
+    margin-left: 15px;
     text-decoration: none;
 }
 
-section {
-    padding: 50px 20px;
+/* Hero */
+.hero {
     text-align: center;
+    padding: 80px 20px;
+    background: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f') center/cover;
 }
 
+.hero h2 {
+    font-size: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+}
+
+/* Products */
 .products {
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -57,11 +61,7 @@ section {
     background: #1e293b;
     padding: 15px;
     border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
+    text-align: center;
 }
 
 .card img {
@@ -71,74 +71,62 @@ section {
 
 .price {
     color: #38bdf8;
-    font-size: 18px;
     font-weight: bold;
 }
 
-.order-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #38bdf8;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
+/* Footer */
 footer {
-    background: #020617;
+    background: black;
     padding: 20px;
+    text-align: center;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
     <h1>Sameer Rasool</h1>
-    <p>🔥 All Items Just ₹499 🔥</p>
-    <a href="#products" class="btn">Shop Now</a>
-</header>
+    <div>
+        <a href="#">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-<section>
-    <h2>About</h2>
-    <p>Premium quality clothing at just ₹499. Stylish, comfortable and affordable for everyone.</p>
+<section class="hero">
+    <h2>🔥 All Items ₹499 🔥</h2>
+    <p>Premium Clothing Brand</p>
+    <a href="#products" class="btn">Shop Now</a>
 </section>
 
-<section id="products">
-    <h2>Our Collection</h2>
+<section id="products" class="products">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+        <h3>T-Shirt</h3>
+        <p class="price">₹499</p>
+        <a href="https://instagram.com/bhatsameer09" class="btn">Order</a>
+    </div>
 
-    <div class="products">
-        <div class="card">
-            <img src="tshirt.jpg">
-            <h3>T-Shirts</h3>
-            <p class="price">₹499</p>
-            <p>Comfortable & stylish.</p>
-            <a href="https://instagram.com/bhatsameer09" class="order-btn">Order Now</a>
-        </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+        <h3>Hoodie</h3>
+        <p class="price">₹499</p>
+        <a href="https://instagram.com/bhatsameer09" class="btn">Order</a>
+    </div>
 
-        <div class="card">
-            <img src="hoodie.jpg">
-            <h3>Hoodies</h3>
-            <p class="price">₹499</p>
-            <p>Warm and trendy.</p>
-            <a href="https://instagram.com/bhatsameer09" class="order-btn">Order Now</a>
-        </div>
-
-        <div class="card">
-            <img src="shirt.jpg">
-            <h3>Shirts</h3>
-            <p class="price">₹499</p>
-            <p>Perfect for all occasions.</p>
-            <a href="https://instagram.com/bhat_tabish_04" class="order-btn">Order Now</a>
-        </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
+        <h3>Shirt</h3>
+        <p class="price">₹499</p>
+        <a href="https://instagram.com/bhatsameer09" class="btn">Order</a>
     </div>
 </section>
 
-<section>
+<section id="contact" style="text-align:center; padding:40px;">
     <h2>Contact</h2>
-    <p>📱 Instagram: @bhat_tabish_04</p>
-    <p>📞 Phone: +91 78898 26727</p>
+    <p>Instagram: @bhat_tabish_04</p>
+    <p>Phone: +91 78898 26727</p>
 </section>
 
 <footer>
