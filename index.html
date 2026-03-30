@@ -17,6 +17,22 @@ body {
     scroll-behavior: smooth;
 }
 
+/* DISCOUNT BAR */
+.discount-bar {
+    background:#facc15;
+    color:#0f172a;
+    text-align:center;
+    font-weight:bold;
+    padding:8px 0;
+    font-size:18px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 /* NAVBAR */
 nav {
     display: flex;
@@ -126,6 +142,9 @@ footer a:hover { color:#0ea5e9; }
 </head>
 <body>
 
+<!-- DISCOUNT BAR -->
+<div class="discount-bar">🎉 10% OFF for the first 100 customers! 🎉</div>
+
 <!-- NAVBAR -->
 <nav>
     <h1>
@@ -156,11 +175,51 @@ footer a:hover { color:#0ea5e9; }
 
 <!-- PRODUCTS -->
 <section id="products" class="products">
-    <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div></div><span class="cod">COD Available</span><h3>T-Shirt</h3><p class="price">₹499</p></div>
-    <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div></div><span class="cod">COD Available</span><h3>Hoodie</h3><p class="price">₹499</p></div>
-    <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div></div><span class="cod">COD Available</span><h3>Shirt</h3><p class="price">₹499</p></div>
-    <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-76d8c8f7b57a"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div></div><span class="cod">COD Available</span><h3>Jacket</h3><p class="price">₹699</p></div>
-    <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-8df4c8f7b57b"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div></div><span class="cod">COD Available</span><h3>Sweater</h3><p class="price">₹599</p></div>
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
+        </div>
+        <span class="cod">COD Available</span>
+        <h3>T-Shirt</h3>
+        <p class="price">₹499</p>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
+        </div>
+        <span class="cod">COD Available</span>
+        <h3>Hoodie</h3>
+        <p class="price">₹499</p>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
+            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
+        </div>
+        <span class="cod">COD Available</span>
+        <h3>Shirt</h3>
+        <p class="price">₹499</p>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1602810318354-4b2e2c41d69f"> <!-- Jacket -->
+            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
+        </div>
+        <span class="cod">COD Available</span>
+        <h3>Jacket</h3>
+        <p class="price">₹699</p>
+    </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1618354699278-94b2c8f7b57b"> <!-- Sweater -->
+            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
+        </div>
+        <span class="cod">COD Available</span>
+        <h3>Sweater</h3>
+        <p class="price">₹599</p>
+    </div>
 </section>
 
 <!-- FEATURED PRODUCTS (CAROUSEL) -->
@@ -170,8 +229,8 @@ footer a:hover { color:#0ea5e9; }
         <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>T-Shirt</h3><p class="price">₹499</p></div>
         <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Hoodie</h3><p class="price">₹499</p></div>
         <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Shirt</h3><p class="price">₹499</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-76d8c8f7b57a"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Jacket</h3><p class="price">₹699</p></div>
-        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-8df4c8f7b57b"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Sweater</h3><p class="price">₹599</p></div>
+        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1602810318354-4b2e2c41d69f"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Jacket</h3><p class="price">₹699</p></div>
+        <div class="card"><div class="card-image"><img src="https://images.unsplash.com/photo-1618354699278-94b2c8f7b57b"><div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order</a></div></div><span class="cod">COD</span><h3>Sweater</h3><p class="price">₹599</p></div>
     </div>
 </section>
 
