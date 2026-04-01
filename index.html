@@ -3,205 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sameer Rasool</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Bio Path Lab</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background: #0f172a;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Offer */
+.top-bar {
+    background: red;
     color: white;
-    scroll-behavior: smooth;
-}
-
-/* BIG DISCOUNT BAR */
-.discount-bar {
-    background:#facc15;
-    color:#0f172a;
-    text-align:center;
-    font-weight:bold;
-    padding:15px 0;
-    font-size:26px;
-    letter-spacing:1px;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(8px);
-    background: rgba(0,0,0,0.5);
-}
-nav h1 {
-    color: #38bdf8;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
-}
-nav h1 img { width:50px; height:50px; border-radius:50%; transition: transform 0.3s; }
-nav h1 img:hover { transform: scale(1.1); }
-nav .nav-links { display: flex; gap: 20px; }
-nav .nav-links a { color:white; text-decoration:none; font-weight:500; transition:0.3s; }
-nav .nav-links a:hover { color:#38bdf8; }
-nav .hamburger { display:none; flex-direction: column; cursor:pointer; }
-nav .hamburger div { width:25px; height:3px; background:white; margin:4px 0; transition:0.4s; }
-
-/* HERO */
-.hero {
-    height: 90vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
     text-align: center;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-}
-.hero-content { position: relative; z-index: 2; animation: fadeIn 2s ease forwards; }
-.hero-content h2 { font-size:50px; margin:0; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
-.hero-content p { font-size:22px; margin-top:10px; text-shadow:1px 1px 6px rgba(0,0,0,0.7); }
-.btn { margin-top:20px; padding:14px 30px; background:linear-gradient(45deg,#38bdf8,#0ea5e9); color:white; text-decoration:none; border-radius:8px; font-weight:600; transition:0.3s; }
-.btn:hover { transform: scale(1.05); box-shadow:0 0 15px #38bdf8; }
-
-/* PRODUCTS */
-.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; padding:60px 20px; }
-.card { background:#1e293b; border-radius:15px; overflow:hidden; position:relative; text-align:center; transition: transform 0.5s, box-shadow 0.5s, opacity 1s; box-shadow:0 5px 20px rgba(0,0,0,0.3); opacity:0; transform:translateY(30px); }
-.card.visible { opacity:1; transform:translateY(0); }
-.card:hover { transform:translateY(-15px); box-shadow:0 15px 40px rgba(0,0,0,0.6); }
-.card-image { position: relative; overflow:hidden; border-radius:15px; }
-.card img { width:100%; transition:transform 0.5s ease; }
-.card:hover img { transform:scale(1.1); }
-.overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; opacity:0; transition:opacity 0.3s ease; border-radius:15px; }
-.card:hover .overlay { opacity:1; }
-.overlay .whatsapp { padding:12px 20px; background:#25D366; color:white; border-radius:8px; font-weight:600; text-decoration:none; transition:transform 0.3s, background 0.3s; }
-.overlay .whatsapp:hover { background:#1ebe5d; transform:scale(1.05); }
-.card h3 { margin:15px 0 5px; }
-.card .price { margin-bottom:10px; color:#38bdf8; font-weight:bold; font-size:18px; }
-.cod { background:#f43f5e; color:white; font-weight:bold; padding:5px 10px; border-radius:5px; display:inline-block; margin-bottom:10px; }
-
-/* FOOTER */
-footer { background:#000; padding:30px 20px; text-align:center; font-size:16px; }
-footer a { color:#38bdf8; margin:0 10px; text-decoration:none; transition:0.3s; }
-footer a:hover { color:#0ea5e9; }
-
-/* MEDIA QUERIES */
-@media screen and (max-width:768px){
-    nav .nav-links { display:none; flex-direction:column; background:rgba(0,0,0,0.9); position:absolute; top:60px; right:0; width:200px; border-radius:0 0 0 8px; }
-    nav .nav-links.show { display:flex; }
-    nav .hamburger { display:flex; }
-    .products { grid-template-columns:1fr; }
+    font-weight: bold;
+    animation: slide 12s linear infinite;
 }
 
-/* Animations */
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slide {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
+}
+
+/* Navbar */
+nav {
+    background: #0a3d62;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1580281657527-47d3e9cfc55c');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+/* Packages */
+.packages {
+    padding: 40px;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    width: 280px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ccc;
+    text-align: left;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+/* Booking */
+.booking {
+    background: #f1f2f6;
+    padding: 40px;
+    text-align: center;
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+}
+
+button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp a {
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 </style>
+
 </head>
+
 <body>
 
-<!-- BIG DISCOUNT BAR -->
-<div class="discount-bar">🎉 10% OFF for the first 100 customers! 🎉</div>
+<div class="top-bar">
+💉 10% OFF for First 100 Patients | Free Home Sample Collection Available
+</div>
 
-<!-- NAVBAR -->
 <nav>
-    <h1>
-        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7" alt="Logo">
-        Sameer Rasool
-    </h1>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#products">Shop</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
-    </div>
+<a href="#">Home</a>
+<a href="#">Packages</a>
+<a href="#">Book Test</a>
+<a href="#">Contact</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h2>🔥 All Items ₹499 🔥</h2>
-        <p>Premium Clothing Brand</p>
-        <a href="#products" class="btn">Shop Now</a>
-    </div>
-</section>
+<div class="hero">
+<h1>Bio Path Lab</h1>
+<p>Authorised Collection Centre - Path Care Labs</p>
+<p>📍 Baghat, Srinagar</p>
+</div>
 
-<!-- PRODUCTS -->
-<section id="products" class="products">
-    <div class="card">
-        <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
-        </div>
-        <span class="cod">COD Available</span>
-        <h3>T-Shirt</h3>
-        <p class="price">₹499</p>
-    </div>
-    <div class="card">
-        <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
-        </div>
-        <span class="cod">COD Available</span>
-        <h3>Hoodie</h3>
-        <p class="price">₹499</p>
-    </div>
-    <div class="card">
-        <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
-            <div class="overlay"><a href="https://wa.me/917889826727" class="whatsapp">Order on WhatsApp</a></div>
-        </div>
-        <span class="cod">COD Available</span>
-        <h3>Shirt</h3>
-        <p class="price">₹499</p>
-    </div>
-</section>
+<div class="packages">
+<h2>Our Health Packages</h2>
 
-<!-- CONTACT -->
-<section id="contact" style="text-align:center; padding:60px 20px;">
-    <h2>Contact</h2>
-    <p>📱 Instagram: <a href="https://instagram.com/bhatsameer09">@bhatsameer09</a></p>
-    <p>📞 Phone: +91 78898 26727</p>
-</section>
+<div class="card">
+<h3>HY FITNESS 1.1</h3>
+<p>CBC, Liver, Kidney, Lipid, Thyroid, Sugar, Urine</p>
+<p class="price">₹699</p>
+</div>
 
-<!-- FOOTER -->
+<div class="card">
+<h3>HY FITNESS 1.2</h3>
+<p>All above + Iron Profile</p>
+<p class="price">₹799</p>
+</div>
+
+<div class="card">
+<h3>HY FITNESS 1.3</h3>
+<p>All above + HbA1c</p>
+<p class="price">₹999</p>
+</div>
+
+<div class="card">
+<h3>HY FITNESS 1.4</h3>
+<p>All above + Vitamin D & B12</p>
+<p class="price">₹1399</p>
+</div>
+
+<div class="card">
+<h3>HY SPECIAL TEST</h3>
+<p>Full body checkup + CRP, ESR</p>
+<p class="price">₹1699</p>
+</div>
+
+</div>
+
+<div class="booking">
+<h2>Book Your Test</h2>
+
+<input type="text" placeholder="Your Name"><br>
+<input type="number" placeholder="Phone Number"><br>
+
+<select>
+<option>Select Package</option>
+<option>HY FITNESS 1.1</option>
+<option>HY FITNESS 1.2</option>
+<option>HY FITNESS 1.3</option>
+<option>HY FITNESS 1.4</option>
+<option>HY SPECIAL TEST</option>
+</select><br>
+
+<button onclick="alert('Booking Submitted! We will contact you soon.')">Book Now</button>
+</div>
+
+<div class="whatsapp">
+<a href="https://wa.me/917889826727">💬</a>
+</div>
+
 <footer>
-    <p>© 2026 Sameer Rasool</p>
+<p>📞 +91 78898 26727</p>
+<p>📍 Baghat, Srinagar, Jammu & Kashmir</p>
+<p>© 2026 Bio Path Lab</p>
 </footer>
-
-<script>
-// HAMBURGER MENU
-function toggleMenu(){document.querySelector('.nav-links').classList.toggle('show');}
-
-// Scroll reveal animations
-function reveal() {
-    let cards = document.querySelectorAll('.card');
-    for(let card of cards){
-        let windowHeight = window.innerHeight;
-        let elementTop = card.getBoundingClientRect().top;
-        if(elementTop < windowHeight - 50){
-            card.classList.add('visible');
-        }
-    }
-}
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
-</script>
 
 </body>
 </html>
