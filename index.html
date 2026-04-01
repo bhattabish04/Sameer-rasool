@@ -8,22 +8,17 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f6fa;
 }
 
-/* Top Offer */
+/* Top Bar */
 .top-bar {
-    background: red;
+    background: #e84118;
     color: white;
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    animation: slide 12s linear infinite;
-}
-
-@keyframes slide {
-    0% {transform: translateX(100%);}
-    100% {transform: translateX(-100%);}
 }
 
 /* Navbar */
@@ -37,54 +32,65 @@ nav a {
     color: white;
     margin: 15px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 /* Hero */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1580281657527-47d3e9cfc55c');
-    background-size: cover;
-    color: white;
     text-align: center;
-    padding: 120px 20px;
+    padding: 60px;
+    background: linear-gradient(to right, #0a3d62, #3c6382);
+    color: white;
 }
 
-.hero h1 {
-    font-size: 40px;
+/* Slider */
+.slider {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider img {
+    width: 100%;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
 }
 
 /* Packages */
 .packages {
-    padding: 40px;
     text-align: center;
+    padding: 30px;
 }
 
 .card {
     display: inline-block;
-    width: 280px;
-    margin: 15px;
-    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
     border-radius: 12px;
+    background: white;
     box-shadow: 0 0 10px #ccc;
-    text-align: left;
+    transition: 0.3s;
 }
 
-.price {
-    color: green;
-    font-weight: bold;
+.card:hover {
+    transform: scale(1.05);
 }
 
 /* Booking */
 .booking {
-    background: #f1f2f6;
-    padding: 40px;
+    background: white;
+    padding: 30px;
     text-align: center;
 }
 
 input, select {
     padding: 10px;
-    margin: 10px;
+    margin: 8px;
     width: 220px;
 }
 
@@ -93,6 +99,7 @@ button {
     background: green;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 /* WhatsApp */
@@ -108,6 +115,7 @@ button {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
+    font-size: 18px;
 }
 
 /* Footer */
@@ -115,7 +123,7 @@ footer {
     background: #0a3d62;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 </style>
 
@@ -124,13 +132,13 @@ footer {
 <body>
 
 <div class="top-bar">
-💉 10% OFF for First 100 Patients | Free Home Sample Collection Available
+💉 Limited Time Offer | 10% OFF | Free Home Collection Available
 </div>
 
 <nav>
 <a href="#">Home</a>
 <a href="#">Packages</a>
-<a href="#">Book Test</a>
+<a href="#">Book</a>
 <a href="#">Contact</a>
 </nav>
 
@@ -140,59 +148,45 @@ footer {
 <p>📍 Baghat, Srinagar</p>
 </div>
 
+<!-- IMAGE SLIDER -->
+<div class="slider">
+<img src="poster.jpg" class="active">
+<img src="poster2.jpg">
+<img src="poster3.jpg">
+</div>
+
+<!-- PACKAGES -->
 <div class="packages">
-<h2>Our Health Packages</h2>
+<h2>Our Packages</h2>
 
-<div class="card">
-<h3>HY FITNESS 1.1</h3>
-<p>CBC, Liver, Kidney, Lipid, Thyroid, Sugar, Urine</p>
-<p class="price">₹699</p>
-</div>
-
-<div class="card">
-<h3>HY FITNESS 1.2</h3>
-<p>All above + Iron Profile</p>
-<p class="price">₹799</p>
-</div>
-
-<div class="card">
-<h3>HY FITNESS 1.3</h3>
-<p>All above + HbA1c</p>
-<p class="price">₹999</p>
-</div>
-
-<div class="card">
-<h3>HY FITNESS 1.4</h3>
-<p>All above + Vitamin D & B12</p>
-<p class="price">₹1399</p>
-</div>
-
-<div class="card">
-<h3>HY SPECIAL TEST</h3>
-<p>Full body checkup + CRP, ESR</p>
-<p class="price">₹1699</p>
-</div>
+<div class="card"><h3>HY FITNESS 1.1</h3><p>₹699</p></div>
+<div class="card"><h3>HY FITNESS 1.2</h3><p>₹799</p></div>
+<div class="card"><h3>HY FITNESS 1.3</h3><p>₹999</p></div>
+<div class="card"><h3>HY FITNESS 1.4</h3><p>₹1399</p></div>
+<div class="card"><h3>HY SPECIAL</h3><p>₹1699</p></div>
 
 </div>
 
+<!-- BOOKING -->
 <div class="booking">
-<h2>Book Your Test</h2>
+<h2>Book Test</h2>
 
-<input type="text" placeholder="Your Name"><br>
-<input type="number" placeholder="Phone Number"><br>
+<input type="text" id="name" placeholder="Your Name"><br>
+<input type="number" id="phone" placeholder="Phone Number"><br>
 
-<select>
+<select id="test">
 <option>Select Package</option>
 <option>HY FITNESS 1.1</option>
 <option>HY FITNESS 1.2</option>
 <option>HY FITNESS 1.3</option>
 <option>HY FITNESS 1.4</option>
-<option>HY SPECIAL TEST</option>
+<option>HY SPECIAL</option>
 </select><br>
 
-<button onclick="alert('Booking Submitted! We will contact you soon.')">Book Now</button>
+<button onclick="sendWhatsApp()">Book on WhatsApp</button>
 </div>
 
+<!-- WhatsApp Button -->
 <div class="whatsapp">
 <a href="https://wa.me/917889826727">💬</a>
 </div>
@@ -200,8 +194,29 @@ footer {
 <footer>
 <p>📞 +91 78898 26727</p>
 <p>📍 Baghat, Srinagar, Jammu & Kashmir</p>
-<p>© 2026 Bio Path Lab</p>
 </footer>
+
+<script>
+// Slider
+let index = 0;
+let images = document.querySelectorAll(".slider img");
+
+setInterval(() => {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+}, 3000);
+
+// WhatsApp Booking
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let test = document.getElementById("test").value;
+
+    let msg = `Hello Bio Path Lab,%0AName: ${name}%0APhone: ${phone}%0ATest: ${test}`;
+    window.open(`https://wa.me/917889826727?text=${msg}`);
+}
+</script>
 
 </body>
 </html>
