@@ -36,28 +36,15 @@ nav a {
 
 /* Hero */
 .hero {
-    text-align: center;
-    padding: 60px;
     background: linear-gradient(to right, #0a3d62, #3c6382);
     color: white;
+    text-align: center;
+    padding: 70px 20px;
 }
 
-/* Slider */
-.slider {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.slider img {
-    width: 100%;
-    display: none;
-}
-
-.slider img.active {
-    display: block;
+.hero h1 {
+    margin: 0;
+    font-size: 32px;
 }
 
 /* Packages */
@@ -115,7 +102,6 @@ button {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 18px;
 }
 
 /* Footer */
@@ -144,20 +130,12 @@ footer {
 
 <div class="hero">
 <h1>Bio Path Lab</h1>
-<p>Authorised Collection Centre - Path Care Labs</p>
-<p>📍 Baghat, Srinagar</p>
+<p>Authorised Collection Centre – Path Care Labs</p>
+<p>📍 Baghat, Srinagar, Jammu & Kashmir</p>
 </div>
 
-<!-- IMAGE SLIDER -->
-<div class="slider">
-<img src="poster.jpg" class="active">
-<img src="poster2.jpg">
-<img src="poster3.jpg">
-</div>
-
-<!-- PACKAGES -->
 <div class="packages">
-<h2>Our Packages</h2>
+<h2>Our Health Packages</h2>
 
 <div class="card"><h3>HY FITNESS 1.1</h3><p>₹699</p></div>
 <div class="card"><h3>HY FITNESS 1.2</h3><p>₹799</p></div>
@@ -167,9 +145,8 @@ footer {
 
 </div>
 
-<!-- BOOKING -->
 <div class="booking">
-<h2>Book Test</h2>
+<h2>Book Your Test</h2>
 
 <input type="text" id="name" placeholder="Your Name"><br>
 <input type="number" id="phone" placeholder="Phone Number"><br>
@@ -186,28 +163,17 @@ footer {
 <button onclick="sendWhatsApp()">Book on WhatsApp</button>
 </div>
 
-<!-- WhatsApp Button -->
 <div class="whatsapp">
 <a href="https://wa.me/917889826727">💬</a>
 </div>
 
 <footer>
 <p>📞 +91 78898 26727</p>
-<p>📍 Baghat, Srinagar, Jammu & Kashmir</p>
+<p>📍 Baghat, Srinagar</p>
+<p>© 2026 Bio Path Lab</p>
 </footer>
 
 <script>
-// Slider
-let index = 0;
-let images = document.querySelectorAll(".slider img");
-
-setInterval(() => {
-    images[index].classList.remove("active");
-    index = (index + 1) % images.length;
-    images[index].classList.add("active");
-}, 3000);
-
-// WhatsApp Booking
 function sendWhatsApp() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
